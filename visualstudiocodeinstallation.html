@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title></title>
+
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/highlight.dark.css">
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body>
+
+        <header class="navbar navbar-default navbar-fixed-top">
+
+            <a class="navbar-brand" href="/">
+                The title
+                <small class="hidden-xs hidden-sm">
+                    This is the default subtitle!
+                </small>
+            </a>
+
+            
+        </header>
+
+        <main class="container">
+            <div class="row">
+
+                
+                <section id="content" class="col-sm-12">
+                    <p>Instalación de Visual Studio Code</p>
+<p>Visual Studio Code es un editor de código fuente desarrollado por Microsoft para Windows , Linux y macOS . Incluye soporte para depuración , control Git incorporado , resaltado de sintaxis , finalización de código inteligente , fragmentos y refactorización de código . También es personalizable, por lo que los usuarios pueden cambiar el tema del editor , atajos de teclado y preferencias. Es libre y de código abierto y su descarga para la distribución de Ubuntu se lleva a cabo por medio de la página principal de Visual Studio code.</p>
+<p><a href="https://code.visualstudio.com/Download"><a href="https://code.visualstudio.com/Download">https://code.visualstudio.com/Download</a></a></p>
+<p>En la cual debemos elegir la opción necesaria, en este caso descargamos el fichero con extención &quot;.deb&quot; para Debian, Ubuntu.</p>
+<p><img src="/pictures/visualdownload.png" alt="" /></p>
+<p>Ya que hayamos elegido la opción a descargar dependiendo que explorador estamos utilizando veremos el progreso de la descarga.
+<img src="/pictures/visualDownloading.png" alt="" /></p>
+<p>Cabe recordar que los archivos .deb en el siguiente ejemplo dentro de Ubuntu 16.04 se puede instalar directamente al abrir el fichero que resulte de la descarga, la cual nos muestra una ventana de &quot;Software de Ubuntu&quot; en la cual solo es necesario dar click en el boton de instalar para comenzar con la instalación.
+<img src="/pictures/InstaladorVisual.png" alt="" /></p>
+<p>Antes de proceder el sistema a la instalación hara la petición de las credenciales para autenticar al administrador del equipo.
+<img src="/pictures/CredentialRoot.png" alt="" /></p>
+<ul>
+<li>Otra opción teniendo el fichero .deb ya descargado (en nuestro caso code_1.16.1-1505406497_amd64 version actual) es realizar la instalación desde la consola con los siguientes comandos:
+Desempaquetamos: 
+<pre><code>sudo dpkg -i code_1.16.1-1505406497_amd64.deb</code></pre>
+<p>Instalamos: </p>
+<pre><code>sudo apt-get install -f</code></pre>
+<p>Despues, al termino de la instalación automatica o por terminal podremos hacer uso de Visual Studio Code, encontrando en las aplicaciones de nuestro sistema la aplicación con dicho nombre.</p></li>
+</ul>
+<p><img src="/pictures/visuallink.png" alt="" /></p>
+                </section>
+
+            </div>
+        </main>
+
+        <footer>
+            <div class="container">
+                <p class="text-muted">
+                    website generated with <a href="http://couscous.io" title="Markdown website generator">Couscous</a>
+                </p>
+            </div>
+        </footer>
+
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script src="//yastatic.net/highlightjs/8.2/highlight.min.js"></script>
+
+        <script>
+            $(function() {
+                $("section>h1").wrap('<div class="page-header" />');
+                // Syntax highlighting
+                hljs.initHighlightingOnLoad();
+            });
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title></title>
+
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/highlight.dark.css">
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body>
+
+        <header class="navbar navbar-default navbar-fixed-top">
+
+            <a class="navbar-brand" href="/">
+                The title
+                <small class="hidden-xs hidden-sm">
+                    This is the default subtitle!
+                </small>
+            </a>
+
+            
+        </header>
+
+        <main class="container">
+            <div class="row">
+
+                
+                <section id="content" class="col-sm-12">
+                    <p>SQL ORACLE DEVELOPER</p>
+<p>Para la instalación de Oracle SQEL Developer es necesario descargar desde la siguiente URL:</p>
+<p><a href="http://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html"><a href="http://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html">http://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html</a></a><br />
+Dentro de la pagina tenemos que aceptar los terminos y condiciones para la descarga que se muestra en la parte de arriba, despues de esto debemos seleccionar el archivo a descargar en este caso para esta instalacion nos iremos a la opcion &quot;Other Platforms&quot; el cual nos descargara un fichero &quot;.zip&quot;<br />
+<img src="/pictures/OracleSQLDownload.png" alt="" /></p>
+<p>Oracle nos pide crear o logearnos con una cuenta dentro de su portal, por lo tanto se observara una ventana como la siguiente, en la cual debemos introducir nuestras credenciales o bien crear una cuenta la cual no nos toma mas de un minuto en su creación, esto con el fin de otorgarnos el permiso para descarga.</p>
+<p><img src="/pictures/loginoracle.png" alt="" /></p>
+<p>Podremos ver la descarga completa o el progreso de la misma dependiendo el explorador que estemos utilizando.<br />
+<img src="/pictures/FIcheroSQLDeveloper.png" alt="" /></p>
+<p>Dentro del directorio en el que se descargo nuestro fichero .zip procedemos a la instalación por medio de los siguientes comandos:<br />
+Para desempaquetar nuestro archivo dentro de la carpeta /opt:</p>
+<pre><code>sudo unzip sqldeveloper-17.2.0.188.1159-no-jre.zip -d /opt</code></pre>
+<p>Despues validamos que se haya creado el directorio /sqldeveloper moviendonos a dicho directorio:</p>
+<pre><code>cd /opt/sqldeveloper</code></pre>
+<p>Dentro de nuestra carpeta editamos el archivo sqldeveloper.sh para configuración:</p>
+<pre><code>gedit sqldeveloper.sh</code></pre>
+<p>Nos abrira nuestro editor de texto en este caso 'gedit', vamos a alterar el contenido de este archivo comentando las primeras dos lineas y pegando las ultimas dos nuevas lineas como se muestra a continuación:</p>
+<pre><code>#!/bin/bash
+#cd “`dirname $0`”/sqldeveloper/bin &amp;&amp; bash sqldeveloper $*
+
+export JAVA_HOME=/usr/lib/jvm/java-8-oracle/
+cd /opt/sqldeveloper/sqldeveloper/bin &amp;&amp; bash sqldeveloper $* &amp;</code></pre>
+<ul>
+<li>NOTA: Nuestro paquete descargado desde la pagina anteriormente mencionada ya incluye el SDK Java 8 por lo tanto no hay que realizar nada en cuestion a la version Java.</li>
+</ul>
+<p>Guardamos y ceramos nuestro archivo sqldeveloper.sh y procemos a crear un link simbolico:</p>
+<pre><code>sudo ln -s /opt/sqldeveloper/sqldeveloper.sh /usr/local/bin/sqldeveloper</code></pre>
+<p>Ahora podemos correr el comando sqldeveloper y nos abrira la interfaz de nuestra aplicacion.<img src="/pictures/interfazsqloracle.png" alt="" /></p>
+                </section>
+
+            </div>
+        </main>
+
+        <footer>
+            <div class="container">
+                <p class="text-muted">
+                    website generated with <a href="http://couscous.io" title="Markdown website generator">Couscous</a>
+                </p>
+            </div>
+        </footer>
+
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script src="//yastatic.net/highlightjs/8.2/highlight.min.js"></script>
+
+        <script>
+            $(function() {
+                $("section>h1").wrap('<div class="page-header" />');
+                // Syntax highlighting
+                hljs.initHighlightingOnLoad();
+            });
+        </script>
+
+    </body>
+</html>
